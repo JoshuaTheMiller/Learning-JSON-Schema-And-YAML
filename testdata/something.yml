@@ -1,0 +1,36 @@
+---
+communities:
+- name: Test
+  url: example.com  
+  code_of_conduct: coc
+  license: lic
+  endorsements:
+    - name: Josh
+      email: no@example.com
+      title: Doer
+- name: Test2
+  url: example2.com
+  type: repo
+  code_of_conduct: coc2
+  license: lic2
+  endorsements:
+    - name: Josh2
+      email: no2@example.com
+      title: Doer2
+- name: OrgTest
+  url: example3.com
+  type: org
+  endorsements:
+    - name: Josh2
+      email: no2@example.com
+      title: Doer2
+  repositories:
+  - name: Test2
+    url: example2.com
+    type: repo
+    code_of_conduct: coc2
+    license: lic2
+    endorsements:
+      - name: Josh2
+        email: no2@example.com
+        title: Doer2

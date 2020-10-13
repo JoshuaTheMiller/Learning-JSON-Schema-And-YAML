@@ -1,0 +1,22 @@
+{
+  "name": "custom-yaml-validator",
+  "version": "0.0.0",
+  "description": "Validates a custom yaml schema",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node dist/index.js"
+  },
+  "author": "JoshuaTheMiller",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^14.11.8",
+    "ajv": "^6.12.6",
+    "fs": "^0.0.1-security",
+    "yaml-validator": "^3.0.0"
+  },
+  "devDependencies": {
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  }
+}

@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "organization": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "repository": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "repo",
+                        "org"
+                    ],
+                    "default": "repo"
+                },
+                "endorsements": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/endorsement"
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "name",
+                "endorsements"
+            ]
+        },
+        "endorsement": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "email",
+                "title"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "$id": "http://joshuamiller.net/schemas/someschema.json",
+    "type": "object",
+    "properties": {
+        "communities": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/repository"
+            },
+            "minItems": 0
+        }
+    },
+    "required": [
+        "communities"
+    ]
+}
