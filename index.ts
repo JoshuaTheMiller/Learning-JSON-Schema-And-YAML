@@ -1,4 +1,5 @@
 import AJV, { ErrorObject } from "ajv"
+import YAML from "yaml"
 import * as fs from "fs"
 
 const ajValidator = new AJV({ allErrors: true });
@@ -9,7 +10,7 @@ const validate = ajValidator.compile(communitySchema);
 // type parameter can be used to make it type guard:
 // const validate = ajv.compile<MyData>(schema)
 
-const toValidate = JSON.parse(readFile("./testdata/something.json"));
+const toValidate = YAML.parse(readFile("./testdata/something.yml"));
 
 const result = validate(toValidate);
 if (!result) {

@@ -21,7 +21,7 @@ communities:
   url: example3.com
   type: org
   endorsements:
-    - name: Josh2
+    - name5: Josh2
       email: no2@example.com
       title: Doer2
   repositories:
