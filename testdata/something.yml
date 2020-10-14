@@ -25,7 +25,7 @@ communities:
     - name: Josh2
       email: no2@example.com
       title: Doer2
-  children:
+  repositories:
     - name: Test2
       url: example2.com
       type: repo

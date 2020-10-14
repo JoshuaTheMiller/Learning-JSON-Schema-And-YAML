@@ -76,7 +76,7 @@
                     },
                     "minItems": 0
                 },
-                "children": {
+                "repositories": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/repository"
