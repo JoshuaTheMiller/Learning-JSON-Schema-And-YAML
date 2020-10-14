@@ -35,3 +35,8 @@ communities:
         - name: Josh2
           email: no2@example.com
           title: Doer2
+    - name: Test2
+      url: example2.com
+      type: org_repo
+      code_of_conduct: coc2
+      license: lic2      

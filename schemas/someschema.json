@@ -54,6 +54,38 @@
             ],
             "additionalProperties": false
         },
+        "org_repository": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "const": "org_repo"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "code_of_conduct": {
+                    "type": "string"
+                },
+                "license": {
+                    "type": "string"
+                },
+                "endorsements": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/endorsement"
+                    },
+                    "minItems": 0
+                }
+            },
+            "required": [
+                "name",
+                "type"
+            ],
+            "additionalProperties": false
+        },
         "organization": {
             "type": "object",
             "properties": {
@@ -82,7 +114,14 @@
                 "repositories": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/repository"
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/repository"
+                            },
+                            {
+                                "$ref": "#/definitions/org_repository"
+                            }
+                        ]
                     },
                     "minItems": 0
                 }
