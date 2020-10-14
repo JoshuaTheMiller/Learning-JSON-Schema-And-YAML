@@ -35,10 +35,10 @@
                 },
                 "code_of_conduct": {
                     "type": "string"
-                }, 
+                },
                 "license": {
                     "type": "string"
-                },                               
+                },
                 "endorsements": {
                     "type": "array",
                     "items": {
@@ -62,13 +62,16 @@
                 },
                 "name": {
                     "type": "string"
-                },                
+                },
                 "url": {
                     "type": "string"
                 },
                 "code_of_conduct": {
                     "type": "string"
-                }, 
+                },
+                "license": {
+                    "type": "string"
+                },
                 "endorsements": {
                     "type": "array",
                     "items": {
@@ -87,7 +90,8 @@
             "required": [
                 "name",
                 "endorsements",
-                "type"
+                "type",
+                "repositories"
             ],
             "additionalProperties": false
         }
