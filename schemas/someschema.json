@@ -1,41 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "definitions": {
-        "organization": {
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string"
-                }
-            }
-        },
-        "repository": {
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "type": {
-                    "type": "string",
-                    "enum": [
-                        "repo",
-                        "org"
-                    ],
-                    "default": "repo"
-                },
-                "endorsements": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/endorsement"
-                    },
-                    "minItems": 1
-                }
-            },
-            "required": [
-                "name",
-                "endorsements"
-            ]
-        },
         "endorsement": {
             "type": "object",
             "properties": {
@@ -55,6 +20,76 @@
                 "title"
             ],
             "additionalProperties": false
+        },
+        "repository": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "const": "repo"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "code_of_conduct": {
+                    "type": "string"
+                }, 
+                "license": {
+                    "type": "string"
+                },                               
+                "endorsements": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/endorsement"
+                    },
+                    "minItems": 0
+                }
+            },
+            "required": [
+                "name",
+                "endorsements",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "organization": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "const": "org"
+                },
+                "name": {
+                    "type": "string"
+                },                
+                "url": {
+                    "type": "string"
+                },
+                "code_of_conduct": {
+                    "type": "string"
+                }, 
+                "endorsements": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/endorsement"
+                    },
+                    "minItems": 0
+                },
+                "children": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/repository"
+                    },
+                    "minItems": 0
+                }
+            },
+            "required": [
+                "name",
+                "endorsements",
+                "type"
+            ],
+            "additionalProperties": false
         }
     },
     "$id": "http://joshuamiller.net/schemas/someschema.json",
@@ -63,7 +98,14 @@
         "communities": {
             "type": "array",
             "items": {
-                "$ref": "#/definitions/repository"
+                "oneOf": [
+                    {
+                        "$ref": "#/definitions/repository"
+                    },
+                    {
+                        "$ref": "#/definitions/organization"
+                    }
+                ]
             },
             "minItems": 0
         }
