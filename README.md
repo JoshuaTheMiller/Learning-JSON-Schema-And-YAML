@@ -7,6 +7,10 @@ yarn install
 yarn run start
 ```
 
+## Current thought
+
+Either I wrote my schema poorly, I'm using AJV wrong, or both as my error outputs are horrendous... I feel like it has something to do with the combination of using `oneOf` in my communities property, as well as the `const` property of `type` for the items within the communities array. More to come...
+
 ## Notes
 
 * json-schema doesn't support merging of schemas, which would help reduce duplicate schema definition (allOf does not satisfy object inheritance or composition).
