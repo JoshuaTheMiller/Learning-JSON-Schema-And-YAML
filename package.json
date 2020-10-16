@@ -12,6 +12,7 @@
   "dependencies": {
     "@types/node": "^14.11.8",
     "ajv": "^6.12.6",
+    "better-ajv-errors": "^0.6.7",
     "fs": "^0.0.1-security",
     "yaml": "^2.0.0-1",
     "yaml-validator": "^3.0.0"
