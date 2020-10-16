@@ -3,6 +3,7 @@
     {
       "name": "Test",
       "url": "example.com",
+      "type": "repo",
       "code_of_conduct": "coc",
       "license": "lic",
       "endorsements": [
@@ -52,18 +53,13 @@
               "title": "Doer2"
             }
           ]
-        }
-      ]
-    },
-    {
-      "name": "OrgTest",
-      "url": "example3.com",
-      "type": "org",
-      "endorsements": [
+        },
         {
-          "name": "Josh2",
-          "email": "no2@example.com",
-          "title": "Doer2"          
+          "name": "Test2",
+          "url": "example2.com",
+          "type": "org_repo",
+          "code_of_conduct": "coc2",
+          "license": "lic2"
         }
       ]
     }
